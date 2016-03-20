@@ -128,3 +128,11 @@ BASE16_SHELL="$HOME/.config/base16-shell/base16-ocean.dark.sh"
 # export TERM=screen-256color # makes weird signs
 # this works though:
 export TERM=xterm-256color
+
+# shorten prompt
+# http://askubuntu.com/questions/145618/how-can-i-shorten-my-command-line-bash-prompt
+if [ "$color_prompt" = yes ]; then
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$ '
+else
+    PS1='${debian_chroot:+($debian_chroot)}\u:\W\$ '
+fi
